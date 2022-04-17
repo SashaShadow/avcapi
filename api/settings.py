@@ -89,16 +89,27 @@ WSGI_APPLICATION = 'api.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'avc', # database name
+#         'USER': 'root',
+#         'PASSWORD': '22naruto22',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'avc', # database name
-        'USER': 'root',
-        'PASSWORD': '22naruto22',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-}
+     'default': {
+         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+         'NAME': 'd8hs3flffovpk2',
+         'USER': 'mghcgtqeakbdys',
+         'PASSWORD': '6c6fe57fd5657c65b723fd86eeb130e2501ad8fc450d03834867c711366e40c8',
+         'HOST': 'ec2-52-73-155-171.compute-1.amazonaws.com',
+         'PORT': '5432',
+     }
+ }
 
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
