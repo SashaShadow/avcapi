@@ -16,8 +16,6 @@ import dj_database_url
 from pathlib import Path
 import pymysql
 pymysql.install_as_MySQLdb()
-import sys
-import urlparse
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -98,6 +96,7 @@ DATABASES = {
         'USER': 'b2aa98e81b7ebc',
         'PASSWORD': '8e95ddd1',
         'HOST': 'us-cdbr-east-05.cleardb.net',
+        'PORT': '3306',
     }
 }
 
