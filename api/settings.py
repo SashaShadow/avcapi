@@ -82,34 +82,16 @@ WSGI_APPLICATION = 'api.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'heroku_96f9b8cc9d12b77', # database name
         'USER': 'b2aa98e81b7ebc',
-        'PASSWORD': '8e95ddd1',
+        'PASSWORD': os.getenv('DB_PASSWORD'),
         'HOST': 'us-cdbr-east-05.cleardb.net',
         'PORT': '3306',
     }
 }
-
-# DATABASES = {
-#      'default': {
-#          'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#          'NAME': 'd8hs3flffovpk2',
-#          'USER': 'mghcgtqeakbdys',
-#          'PASSWORD': '6c6fe57fd5657c65b723fd86eeb130e2501ad8fc450d03834867c711366e40c8',
-#          'HOST': 'ec2-52-73-155-171.compute-1.amazonaws.com',
-#          'PORT': '5432',
-#      }
-#  }
 
 # db_from_env = dj_database_url.config(conn_max_age=500)
 # DATABASES['default'].update(db_from_env)
