@@ -91,16 +91,15 @@ WSGI_APPLICATION = 'api.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'heroku_2347c53a84ed366', # database name
-#         'USER': 'b39d17d3d56ab9',
-#         'PASSWORD': '68394325',
-#         'HOST': 'localhost',
-#         'PORT': '3306',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'heroku_96f9b8cc9d12b77', # database name
+        'USER': 'b2aa98e81b7ebc',
+        'PASSWORD': '8e95ddd1',
+        'HOST': 'us-cdbr-east-05.cleardb.net',
+    }
+}
 
 # DATABASES = {
 #      'default': {
@@ -170,35 +169,3 @@ REST_FRAMEWORK = {
 django_heroku.settings(locals())
 
 
-
-# Register database schemes in URLs.
-urlparse.uses_netloc.append('mysql')
-
-try:
-
-    # Check to make sure DATABASES is set in settings.py file.
-    # If not default to {}
-
-    if 'DATABASES' not in locals():
-        DATABASES = {}
-
-    if 'DATABASE_URL' in os.environ:
-        url = urlparse.urlparse(os.environ['DATABASE_URL'])
-
-        # Ensure default database exists.
-        DATABASES['default'] = DATABASES.get('default', {})
-
-        # Update with environment configuration.
-        DATABASES['default'].update({
-            'NAME': url.path[1:],
-            'USER': url.username,
-            'PASSWORD': url.password,
-            'HOST': url.hostname,
-            'PORT': url.port,
-        })
-
-
-        if url.scheme == 'mysql':
-            DATABASES['default']['ENGINE'] = 'django.db.backends.mysql'
-except Exception:
-    print ('Unexpected error:'), sys.exc_info()
