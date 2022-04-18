@@ -1,7 +1,9 @@
 asgiref==3.5.0
 certifi==2021.10.8
+cffi==1.15.0
 charset-normalizer==2.0.12
 colorama==0.4.4
+cryptography==36.0.2
 defusedxml==0.7.1
 dj-database-url==0.5.0
 Django==4.0.4
@@ -13,6 +15,7 @@ httpie==3.1.0
 idna==3.3
 multidict==6.0.2
 psycopg2==2.9.3
+pycparser==2.21
 Pygments==2.11.2
 PyMySQL==1.0.2
 PySocks==1.7.1
