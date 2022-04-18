@@ -1,9 +1,6 @@
 from django.contrib import admin
-
+from avcapi.models import Songs
 # Register your models here.
-
-from django.contrib import admin
-from models import Songs
 
 class SongsAdmin(admin.ModelAdmin):
     fields    = ('id', 'nombre', 'año_de_composición', 'duración_segundos', 'compositores', 'letra')
